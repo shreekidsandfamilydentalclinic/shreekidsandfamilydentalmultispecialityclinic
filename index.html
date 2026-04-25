@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Best Dental Clinic in Dharmabad | Shree Kids & Family Multispeciality Dental Hospital</title>
+
+<style>
+body { margin:0; font-family:Segoe UI; background:#f8fafc; }
+
+/* HEADER */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:15px 30px;
+
+  background:linear-gradient(135deg, #0f766e, #14b8a6);  /* 🔥 updated */
+
+  color:white;
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  box-shadow:0 6px 25px rgba(0,0,0,0.25);  /* 🔥 updated */
+}
+
+header:hover {
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+}
+
+@media(max-width:600px){
+  header {
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+}
+
+header .btn {
+  background:white;
+  color:#0f766e;
+
+  padding:10px 20px;
+  border-radius:30px;
+
+  font-weight:600;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+header .btn:hover {
+  background:#0f766e;
+  color:white;
+}
+
+/* BUTTON */
+.btn {
+  background:white;
+  color:#008b8b;
+  padding:10px 18px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:600;
+
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#004d4d;
+  color:white;
+}
+
+.hero {
+  text-align:center;
+  padding:140px 20px;
+
+  background:
+    linear-gradient(
+      rgba(0, 139, 139, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('images/shreeclinic1.jpg');
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  color:white;
+}
+
+.hero h1 {
+  font-size:44px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-shadow:0 6px 20px rgba(0,0,0,0.5);
+}
+
+.hero p {
+  font-size:16px;
+  opacity:0.9;
+  margin-top:10px;
+}
+.hero .btn {
+  background:#ffffff;
+  color:#008b8b;
+  padding:12px 25px;
+  border-radius:30px;
+  font-weight:600;
+  margin-top:15px;
+}
+
+.hero .btn:hover {
+  background:#008b8b;
+  color:white;
+}
+.hero {
+  animation:fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes zoomBg {
+  from { background-size:100%; }
+  to { background-size:110%; }
+}
+
+/* BADGES */
+.badges {
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+.badge {
+  background:rgba(255,255,255,0.2);
+  color:white;
+
+  padding:10px 18px;
+  border-radius:30px;
+
+  font-weight:600;
+  font-size:14px;
+
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.3);
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.badge:hover {
+  transform:translateY(-2px);
+}
+
+/* SECTION */
+.section {
+  padding:70px 20px;
+  text-align:center;
+
+  background:white;
+  margin:30px auto;
+  border-radius:12px;
+
+  max-width:1100px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+/* SERVICES */
+.cards {
+  display:flex; flex-wrap:wrap; gap:20px; justify-content:center;
+}
+.card {
+  background:white; padding:15px;
+  border-radius:10px; width:200px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card, .review {
+  transition:0.3s;
+}
+
+.card:hover, .review:hover {
+  transform:translateY(-5px);
+}
+
+/* GALLERY */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+.gallery img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.gallery img:hover { transform:scale(1.05); }
+
+/* 🔥 PRO LIGHTBOX */
+.lightbox {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.lightbox img {
+  max-width:90%;
+  max-height:85%;
+  border-radius:10px;
+}
+
+/* NAV BUTTONS */
+.nav-btn {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+  padding:10px;
+  user-select:none;
+}
+
+.prev { left:20px; }
+.next { right:20px; }
+
+.close-btn {
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:35px;
+  color:white;
+  cursor:pointer;
+}
+
+/* VIDEOS */
+.videos {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.videos video {
+  width:100%;
+  height:220px;           /* 🔥 fixed height */
+  object-fit:cover;       /* 🔥 removes black bars */
+  border-radius:12px;
+  background:black;
+}
+
+/* REVIEWS */
+.reviews {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+.review {
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  white-space:pre-line;
+  text-align:left;
+}
+.review b { color:#008b8b; }
+
+/* DOCTOR */
+.doctor-wrapper {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:40px;
+  max-width:1000px;
+  margin:auto;
+  flex-wrap:wrap;
+}
+
+.doc-img {
+  width:300px;
+  height:auto;
+  border-radius:15px;
+  object-fit:cover;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.doctor-info {
+  max-width:500px;
+  text-align:left;
+}
+
+/* NOTE */
+.note {
+  max-width:750px;
+  margin:40px auto;
+
+  background:white;
+  color:#0f172a;
+
+  padding:35px 25px;        /* 🔥 extra top space */
+  border-radius:16px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+  font-style:italic;
+  text-align:center;
+
+  border-left:5px solid #008b8b;
+
+  position:relative;        /* 🔥 REQUIRED */
+  transition:0.3s;
+}
+
+.note::before {
+  content:"“";
+  font-size:60px;
+  position:absolute;
+  top:5px;
+  left:15px;
+  opacity:0.15;
+}
+
+.note b {
+  display:block;
+  margin-top:15px;
+  font-style:normal;
+  font-size:14px;
+  opacity:0.9;
+}
+
+.note:hover {
+  transform:translateY(-5px);
+}
+
+/* CTA */
+.cta {
+  background:linear-gradient(135deg, #0f766e, #115e59);
+  color:white;
+
+  padding:60px 20px;
+  text-align:center;
+
+  border-radius:20px;
+  margin:40px auto;
+  max-width:1000px;
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.cta h2 {
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.cta p {
+  opacity:0.9;
+  margin-bottom:20px;
+}
+
+.cta .btn {
+  background:white;
+  color:#0f766e;
+  font-weight:600;
+}
+
+.cta .btn:hover {
+  background:#0f766e;
+  color:white;
+}
+
+/* FOOTER */
+.footer {
+  background:#0f172a;
+  color:#cbd5f5;
+
+  padding:40px 20px;
+}
+
+.footer-container {
+  max-width:1100px;
+  margin:auto;
+
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo-container {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-container img {
+  height:50px;
+  width:auto;
+
+  border-radius:10px;
+
+  box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+.logo-container span {
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+.logo-container img {
+  height:50px;
+  background:white;
+  padding:5px;
+  border-radius:8px;
+}
+.logo-container small {
+  font-weight:400;
+  font-size:12px;
+  opacity:0.85;
+  display:block;
+}
+
+.footer h3 {
+  color:white;
+  margin-bottom:10px;
+}
+
+.footer p {
+  margin:6px 0;
+  font-size:14px;
+}
+
+.footer-bottom {
+  text-align:center;
+  margin-top:20px;
+  font-size:13px;
+  opacity:0.7;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .doctor-wrapper {
+    flex-direction:column;        /* stack vertically */
+    align-items:center;
+    text-align:center;
+    gap:20px;                     /* better spacing */
+  }
+
+  .doc-img {
+    width:220px;                  /* smaller image for mobile */
+    max-width:90%;
+  }
+
+  .doctor-info {
+    max-width:100%;
+    padding:0 10px;
+    text-align:center;
+  }
+
+  .doctor-info p {
+    font-size:14px;
+    line-height:1.5;
+  }
+}
+@media(max-width:480px){
+  .doc-img {
+    width:180px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="images/shreecliniclogo.jpeg" alt="Shree Dental Clinic Logo">
+
+    <span>
+      Shree Kids & Family Multispeciality Dental Hospital<br>
+      <small>Painless & Advanced Dental Care</small>
+    </span>
+  </div>
+
+  <a href="tel:7385314994" class="btn">📞 Call Now</a>
+</header>
+
+<section class="hero">
+  <h1>Painless Dental Care for Your Family in Dharmabad</h1>
+  <p>Trusted, Comfortable & Advanced Dental Treatment</p>
+
+  <div class="badges">
+  <div class="badge">⭐ 4.8 Rating</div>
+  <div class="badge">🦷 MDS Specialist</div>
+  <div class="badge">👨‍👩‍👧 Family Friendly</div>
+  </div>
+
+  <br>
+  <a href="tel:7385314994" class="btn">Book Appointment</a>
+</section>
+
+<section class="section">
+  <h2>Clinic Gallery</h2>
+  <div class="gallery" id="gallery">
+    <img src="images/shreeclinic.jpeg">
+    <img src="images/shreeclinic1.jpg">
+    <img src="images/shreeclinic2.jpg">
+    <img src="images/shreeclinic3.jpeg">
+    <img src="images/shreeclinic4.jpeg">
+    <img src="images/shreeclinic5.jpeg">
+    <img src="images/shreeclinic6.jpeg">
+    <img src="images/shreeclinic7.jpeg">
+    <img src="images/shreeclinic8.jpeg">
+    <img src="images/shreeclinic9.jpg">
+    <img src="images/shreeclinic10.jpg">
+  </div>
+</section>
+
+<section class="section">
+  <h2>Treatment Videos</h2>
+  <div class="videos">
+    <video controls src="videos/vid04.mp4"></video>
+    <video controls src="videos/vid05.mp4"></video>
+    <video controls src="videos/vid06.mp4"></video>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What Our Patients Say</h2>
+  <div class="reviews">
+    <div class="review">⭐⭐⭐⭐⭐<br>"I had dental cement fillings done on two of my teeth. Dr. Sumeet Tanurkar is very skilled and made the entire procedure smooth and completely painless. Highly satisfied with the treatment and overall experience."<br><b>Aniket Deshpande</b></div>
+    <div class="review">⭐⭐⭐⭐⭐<br>"Absolutely fantastic experience from start to finish, the doctor is highly skilled and take a time to explain every step of treatment in simple language.
+The clinic is clean, hygienic and equipped with modern technology.
+I am extremely satisfied with the results, highly recommend. Overall best dentist in dharmabad town."<br><b>Uday Kadam</b></div>
+    <div class="review">⭐⭐⭐⭐⭐<br>"दातांचे काम छान वाटलं, समोर पण येणार ट्रीटमेंटसाठी, आणि धर्माबाद वाल्यांना दातांच्या त्रास आणि कामा साठी हेच suggest करेल. धन्यवाद डॉ सुमित सर तुमच्या छान ट्रीटमेंट बद्दल.🙏👍"<br><b>Akash Malge</b></div>
+    <div class="review">⭐⭐⭐⭐<br>"Very. good. treatment Fine. Doctor Exlent. treatment"<br><b>Kothmire</b></div>
+    <div class="review">⭐⭐⭐⭐⭐<br><br><b>Shirpe Suvesh</b></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Meet Your Dentist</h2>
+
+  <div class="doctor-wrapper">
+    <img src="images/docphoto.jpeg" class="doc-img">
+
+    <div class="doctor-info">
+      <h3>Dr. Sumeet Sharad Tanurkar</h3>
+      <p style="color:#008b8b;"><b>BDS, MDS (MUHS)</b><br>Pediatric And Preventive Dentist<br>Children Specialist</p>
+      <p>
+        Dr. Sumeet Tanurkar is a highly skilled dental specialist dedicated to providing painless
+        and advanced dental treatments for patients of all ages.
+      </p>
+      <p>
+        ✔ Pediatric & Family Dental Specialist <br>
+        ✔ Modern Equipment & Advanced Techniques <br>
+        ✔ Gentle, Pain-Free Treatment Approach <br>
+        ✔ Trusted by Patients
+      </p>
+    </div>
+  </div>
+</section>
+
+  <div class="note">
+    "Your smile is our responsibility. We ensure every visit is comfortable and stress-free.
+    We treat every patient like family."
+    <br><br>
+    — <b>Dr. Sumeet Sharad Tanurkar</b>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready for a Healthy Smile? 😊</h2>
+  <p>Book your appointment today and experience painless dental care.</p>
+  <a href="tel:7385314994" class="btn">📞 Call Now</a>
+</section>
+
+<div class="footer">
+  <div class="footer-container">
+
+    <div>
+      <h2>🦷 Shree Kids & Family Multispeciality Dental Hospital</h2>
+      <p>📍 At. Post Dharmabad - 431809, Dist. Nanded</p>
+      <p>🪪 Reg. No. A-46054</p>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>📞 7385314994</p>
+      <p>📧 shreedentalspecialclinic@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Shree Dental Hospital. All rights reserved.
+  </div>
+</div>
+
+<a class="whatsapp" href="https://wa.me/917385314994">💬</a>
+<!-- 🔥 LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeImage()">&times;</span>
+  <span class="nav-btn prev" onclick="changeImage(-1)">❮</span>
+  <img id="lightbox-img">
+  <span class="nav-btn next" onclick="changeImage(1)">❯</span>
+</div>
+
+<script>
+let images = document.querySelectorAll("#gallery img");
+let currentIndex = 0;
+
+images.forEach((img, index) => {
+  img.onclick = () => {
+    currentIndex = index;
+    showImage();
+  }
+});
+
+function showImage(){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = images[currentIndex].src;
+}
+
+function closeImage(){
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeImage(step){
+  currentIndex += step;
+  if(currentIndex < 0) currentIndex = images.length - 1;
+  if(currentIndex >= images.length) currentIndex = 0;
+  showImage();
+}
+
+/* KEYBOARD SUPPORT */
+document.addEventListener("keydown", function(e){
+  if(e.key === "ArrowRight") changeImage(1);
+  if(e.key === "ArrowLeft") changeImage(-1);
+  if(e.key === "Escape") closeImage();
+});
+</script>
+
+</body>
+</html>
